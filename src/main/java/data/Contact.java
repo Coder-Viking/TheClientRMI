@@ -1,12 +1,21 @@
 package data;
 
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Contact {
+
+	String stringForEmptyFields = "       ";
 	@Override
 	public String toString() {
-		return "Contact [name=" + name + ", surName=" + surName + ", address=" + address + ", postalCode=" + postalCode
-				+ ", city=" + city + ", telephone=" + telephone + ", email=" + email + "]";
+		return name + ", " + surName + " - " + (address.isBlank() ? stringForEmptyFields : address) + " - "
+				+ (postalCode.isBlank() ? stringForEmptyFields : postalCode) + " "
+				+ (city.isBlank() ? stringForEmptyFields : city) + " - " + telephone + " - "
+				+ (email.isBlank() ? stringForEmptyFields : email);
 	}
 
+	private Long id;
 	private String name;
 	private String surName;
 	private String address;
@@ -15,14 +24,16 @@ public class Contact {
 	private String telephone;
 	private String email;
 
+	@XmlElement
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	@XmlElement
 	public String getSurName() {
 		return surName;
 	}
@@ -31,6 +42,7 @@ public class Contact {
 		this.surName = surName;
 	}
 
+	@XmlElement
 	public String getAddress() {
 		return address;
 	}
@@ -39,6 +51,7 @@ public class Contact {
 		this.address = address;
 	}
 
+	@XmlElement
 	public String getPostalCode() {
 		return postalCode;
 	}
@@ -47,6 +60,7 @@ public class Contact {
 		this.postalCode = postalCode;
 	}
 
+	@XmlElement
 	public String getCity() {
 		return city;
 	}
@@ -55,6 +69,7 @@ public class Contact {
 		this.city = city;
 	}
 
+	@XmlElement
 	public String getTelephone() {
 		return telephone;
 	}
@@ -63,11 +78,20 @@ public class Contact {
 		this.telephone = telephone;
 	}
 
+	@XmlElement
 	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 }

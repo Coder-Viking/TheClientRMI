@@ -4,4 +4,19 @@
   <artifactId>TheClientRMI</artifactId>
   <version>0.01</version>
   <description>		</description>
+  <dependencies>
+	 <dependency>
+  <groupId>com.formdev</groupId>
+  <artifactId>flatlaf-intellij-themes</artifactId>
+  <version>3.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+
+
+<!-- https://mvnrepository.com/artifact/org.apache.derby/derby -->
+  </dependencies>
+  <properties>
+  <maven.compiler.target>1.8</maven.compiler.target>
+  <maven.compiler.source>1.8</maven.compiler.source>
+</properties>
 </project>
